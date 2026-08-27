@@ -1,0 +1,17 @@
+{
+  "name": "MusicTag Sync - Album Art & Cloud Sync",
+  "short_name": "MusicTag",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0c10",
+  "theme_color": "#ff2d55",
+  "description": "Nhúng ảnh bìa vào file nhạc MP3 và đồng bộ thư viện nhạc đa thiết bị",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23ff2d55'><rect width='512' height='512' rx='128' fill='%23111420'/><path fill='%23ffffff' d='M256 120v180c-9.5-5.5-20.5-8.8-32.3-8.8-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64V184h64v-64h-95.7z'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

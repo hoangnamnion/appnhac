@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ShinTag Music</string>
+    <string name="title_activity_main">ShinTag Music</string>
+    <string name="package_name">com.musictag.sync</string>
+    <string name="custom_url_scheme">com.musictag.sync</string>
+</resources>
