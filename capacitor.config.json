@@ -1,0 +1,10 @@
+{
+  "appId": "com.musictag.sync",
+  "appName": "MusicTag Sync",
+  "webDir": ".",
+  "bundledWebRuntime": false,
+  "ios": {
+    "contentInset": "always",
+    "backgroundColor": "#0a0c10"
+  }
+}

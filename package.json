@@ -1,0 +1,23 @@
+{
+  "name": "shintag-music",
+  "version": "1.0.0",
+  "description": "Nhúng Cover Art & Đồng Bộ Nhạc Đa Thiết Bị (Crayon Shin-chan Edition)",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "cap:add": "npx cap add ios",
+    "cap:sync": "npx cap sync ios",
+    "cap:open": "npx cap open ios",
+    "build:ipa": "npx cap sync ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/ios": "^6.1.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.2"
+  },
+  "keywords": ["music", "id3", "tagger", "ios", "ipa", "supabase", "pwa"],
+  "author": "Hoang Nam",
+  "license": "MIT"
+}
