@@ -1,23 +1,74 @@
 {
   "name": "shintag-music",
   "version": "1.0.0",
-  "description": "Nhúng Cover Art & Đồng Bộ Nhạc Đa Thiết Bị (Crayon Shin-chan Edition)",
-  "main": "index.html",
+  "description": "Nhúng Cover Art & Đồng Bộ Nhạc Đa Thiết Bị (PC, iOS, Android)",
+  "main": "electron/main.js",
   "scripts": {
     "start": "npx serve .",
-    "cap:add": "npx cap add ios",
-    "cap:sync": "npx cap sync ios",
-    "cap:open": "npx cap open ios",
-    "build:ipa": "npx cap sync ios"
+    "build:www": "node build-www.js",
+    "electron:dev": "electron electron/main.js",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "cap:add": "npm run build:www && npx cap add ios && npx cap add android",
+    "cap:sync": "npm run build:www && npx cap sync",
+    "cap:android:add": "npm run build:www && npx cap add android",
+    "cap:android:sync": "npm run build:www && npx cap sync android",
+    "cap:android:open": "npx cap open android",
+    "cap:ios:add": "npm run build:www && npx cap add ios",
+    "cap:ios:sync": "npm run build:www && npx cap sync ios",
+    "cap:ios:open": "npx cap open ios",
+    "build:ipa": "npm run build:www && npx cap sync ios",
+    "build:apk": "npm run build:www && npx cap sync android"
+  },
+  "build": {
+    "appId": "com.musictag.sync",
+    "productName": "ShinTag Music",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "**/*",
+      "!dist-electron/*",
+      "!ios/*",
+      "!android/*"
+    ],
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "manifest.json"
+    },
+    "mac": {
+      "target": ["dmg", "zip"],
+      "category": "public.app-category.music"
+    },
+    "linux": {
+      "target": ["AppImage"]
+    }
   },
   "dependencies": {
+    "@capacitor/android": "^6.2.1",
     "@capacitor/core": "^6.1.2",
-    "@capacitor/ios": "^6.1.2"
+    "@capacitor/filesystem": "^6.0.4",
+    "@capacitor/ios": "^6.1.2",
+    "@capacitor/local-notifications": "^6.1.3"
   },
   "devDependencies": {
-    "@capacitor/cli": "^6.1.2"
+    "@capacitor/cli": "^6.1.2",
+    "electron": "^44.0.0",
+    "electron-builder": "^26.15.3"
   },
-  "keywords": ["music", "id3", "tagger", "ios", "ipa", "supabase", "pwa"],
+  "keywords": [
+    "music",
+    "id3",
+    "tagger",
+    "ios",
+    "android",
+    "electron",
+    "ipa",
+    "apk",
+    "supabase",
+    "pwa"
+  ],
   "author": "Hoang Nam",
   "license": "MIT"
 }

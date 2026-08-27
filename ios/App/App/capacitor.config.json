@@ -1,0 +1,24 @@
+{
+	"appId": "com.musictag.sync",
+	"appName": "ShinTag Music",
+	"webDir": "www",
+	"ios": {
+		"contentInset": "always",
+		"backgroundColor": "#0a0c10"
+	},
+	"android": {
+		"backgroundColor": "#0a0c10",
+		"allowMixedContent": true
+	},
+	"plugins": {
+		"LocalNotifications": {
+			"smallIcon": "ic_stat_icon_config_sample",
+			"iconColor": "#007aff",
+			"sound": "beep.wav"
+		}
+	},
+	"packageClassList": [
+		"FilesystemPlugin",
+		"LocalNotificationsPlugin"
+	]
+}
