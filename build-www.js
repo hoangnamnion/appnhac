@@ -29,9 +29,12 @@ rootFiles.forEach(file => {
   }
 });
 
-// Copy src directory
+// Copy src and icons directories
 if (fs.existsSync(path.join(rootDir, 'src'))) {
   copyFolderSync(path.join(rootDir, 'src'), path.join(wwwDir, 'src'));
+}
+if (fs.existsSync(path.join(rootDir, 'icons'))) {
+  copyFolderSync(path.join(rootDir, 'icons'), path.join(wwwDir, 'icons'));
 }
 
 console.log('✅ Web assets successfully built into www/ directory for Capacitor & Electron.');
